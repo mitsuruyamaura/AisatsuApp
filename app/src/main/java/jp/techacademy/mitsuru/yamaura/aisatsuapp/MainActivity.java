@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
                         //  ２４時間表示（true）なので、時間だけ比べればよい
-                        if (2 < hourOfDay && hourOfDay < 10){
-                            //
+                        if (2 <= hourOfDay && hourOfDay < 10){
+                            
                             mTextView.setText("「おはよう」");
-                        }else if(10 < hourOfDay && hourOfDay <18){
+                        }else if(10 <= hourOfDay && hourOfDay <18){
 
                             mTextView.setText("「こんにちは」");
                         }else {
