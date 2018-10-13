@@ -34,13 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
 
         //  idがbutton1ならTimePickerメソッドを呼び出す
-        if(v.getId == R.id.button1){
+        if(v.getId() == R.id.button1){
             showTimePickerDialog();
         }
     }
 
     private void showTimePickerDialog(){
-
         //  thisでActivityを与える
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {    //  時刻を設定したときにonTimeSetメソッドを呼ぶ
@@ -48,22 +47,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
                         //  ２４時間表示（true）なので、時間だけ比べればよい
-                        if (2 <= hourOfDay && hourOfDay < 10){
-                            
+                        if (1 < hourOfDay && hourOfDay < 10) {
+
                             mTextView.setText("「おはよう」");
-                        }else if(10 <= hourOfDay && hourOfDay <18){
+                        } else if (9 < hourOfDay && hourOfDay < 18) {
 
                             mTextView.setText("「こんにちは」");
-                        }else {
+                        } else {
 
                             mTextView.setText("「こんばんは」");
                         }
+                    }
                 },
                 5,
                 22,
                 true);
         timePickerDialog.show();
-
-        }
     }
 }
